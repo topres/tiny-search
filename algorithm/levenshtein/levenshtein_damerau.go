@@ -6,8 +6,9 @@ package levenshtein
 /// <param name="source">An array of the code points of the first string</param>
 /// <param name="target">An array of the code points of the second string</param>
 /// <param name="threshold">Maximum allowable distance</param>
-/// <returns>Int.MaxValue if threshhold exceeded; otherwise the Damerau-Leveshteim distance between the strings</returns>
-func DistanceD(source string, target string, threshold int) int {
+/// <returns>Int.MaxValue if threshhold exceeded; 
+/// otherwise the Damerau-Leveshteim distance between the strings</returns>
+func DamerauDistance(source string, target string, threshold int) int {
 
     length1 := len(source)
     length2 := len(target)
