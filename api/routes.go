@@ -5,8 +5,9 @@ import (
 	"net/http"
 )
 
-func homeRouter() http.Handler {
+func indexRouter() http.Handler {
 	r := chi.NewRouter()
-	r.Get("/", homeIndex)
+	r.Post("/", createIndex)
+	r.Delete("/", deleteIndex)
 	return r
 }

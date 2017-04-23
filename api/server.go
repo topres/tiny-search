@@ -1,12 +1,10 @@
 package api
 
 import (
+	"github.com/pressly/chi"
+	"github.com/unrolled/render"
 	"log"
 	"net/http"
-
-	"github.com/pressly/chi"
-	//"github.com/pressly/chi/middleware"
-	"github.com/unrolled/render"
 )
 
 var renderer *render.Render
@@ -23,7 +21,7 @@ func StartServer(settings AppSettings) {
 	router.Use(AppMiddleware(settings))
 
 	// routes
-	router.Mount("/index", homeRouter())
+	router.Mount("/index", indexRouter())
 
 	log.Println("Starting HTTP server on port " + settings.Port)
 
